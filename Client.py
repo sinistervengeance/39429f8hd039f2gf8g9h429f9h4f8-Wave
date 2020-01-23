@@ -2,21 +2,18 @@
 from pydub.playback import play
 from tkinter import messagebox
 from pydub import AudioSegment
-from mutagen.id3 import ID3
 import tinytag
 import tkinter
 import pygame
 import random
-import json
 import glob
-import time
 import sys
 import os
 
 os.system("cls")
 appDataDir = "F:\\Sandbox\\Wave Music Player\\"
 settingsDict = {}
-tk = tkinter.Tk().withdraw()
+tkinter.Tk().withdraw()
 
 class Backend:
     '''Functions used for backend-like operations that the end user will not see.'''
@@ -82,7 +79,7 @@ class Backend:
             return shuffledList
             
     def idMusicFile(self, musicFile) -> dict:
-        '''Returns an object containing metadata for argument musciFile.'''
+        '''Returns an object containing metadata for argument musicFile.'''
         metadata = tinytag.TinyTag.get(musicFile)
 
         return metadata
